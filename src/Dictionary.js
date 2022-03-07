@@ -1,6 +1,6 @@
 import React from "react";
 
-export default (props) => {
+export default function Dictionary(props) {
   const [phonetic, setPhonetic] = React.useState();
   const [meanings, setMeanings] = React.useState();
 
@@ -10,7 +10,7 @@ export default (props) => {
       .then((results) => {
         console.log(results);
         if (!results.title) {
-          const [firstResult] = results || [];
+          // const [firstResult] = results || [];
 
           const findPhoneticWithText = (phonetic) => {
             if (phonetic.text && phonetic.audio) {
@@ -68,4 +68,4 @@ export default (props) => {
       </div>
     </div>
   );
-};
+}
