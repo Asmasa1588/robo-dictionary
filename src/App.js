@@ -14,6 +14,14 @@ function App() {
               setSearchTerm(event.target.value);
             }}
           />
+          <button
+            onClick={() => {
+              setSearchTarget(searchTerm);
+            }}
+          >
+            Search
+          </button>
+
           <Dictionary keyWord={searchTerm} />
         </main>
         <footer>
