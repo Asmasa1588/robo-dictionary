@@ -4,6 +4,7 @@ import Dictionary from "./Dictionary";
 
 function App() {
   const [searchTerm, setSearchTerm] = React.useState("bot");
+  const [searchTarget, setSearchTarget] = React.useState(searchTerm);
   return (
     <div className="App">
       <div className="container">
@@ -22,7 +23,7 @@ function App() {
             Search
           </button>
 
-          <Dictionary keyWord={searchTerm} />
+          <Dictionary keyWord={searchTarget} />
         </main>
         <footer>
           Coded by{" "}
