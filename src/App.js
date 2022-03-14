@@ -5,12 +5,20 @@ import Dictionary from "./Dictionary";
 function App() {
   const [searchTerm, setSearchTerm] = React.useState("bot");
   const [searchTarget, setSearchTarget] = React.useState(searchTerm);
+
+  const handleKeyDown = function (e) {
+    if (e.key === "Enter") {
+      setSearchTarget(searchTerm);
+    }
+  };
+
   return (
     <div className="App">
       <div className="container">
         <main>
           <input
             value={searchTerm}
+            onKeyDown={handleKeyDown}
             onChange={(event) => {
               setSearchTerm(event.target.value);
             }}
